@@ -30,7 +30,7 @@
                                     <label class="custom-file-label"for="image">Pilih file</label>
                                 </div>
                             </div>
-                        </div>
+                         </div>
                     </div>
                 </div>
                 <div class="form-group row justify-content-end">

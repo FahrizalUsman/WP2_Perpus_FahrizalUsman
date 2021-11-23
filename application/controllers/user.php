@@ -57,7 +57,8 @@ class User extends CI_Controller
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload('image')) {
                     $gambar_lama = $data['user']['image'];
-                    if ($gambar_lama != 'default.jpg') {unlink(FCPATH . 'assets/img/profile/' . $gambar_lama);
+                    if ($gambar_lama != 'default.jpg') {
+                        unlink(FCPATH . 'assets/img/profile/' . $gambar_lama);
                     }
                     $gambar_baru = $this->upload->data('file_name');
                     $this->db->set('image', $gambar_baru);
@@ -69,4 +70,4 @@ class User extends CI_Controller
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Profil Berhasil diubah </div>');redirect('user');
         }
     }
-} 
+}   
