@@ -8,7 +8,7 @@ class Buku extends CI_Controller
         cek_login();
     }
 
-public function kategori()
+    public function kategori()
     {
         $data['judul'] = 'Kategori Buku';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
@@ -28,13 +28,13 @@ public function kategori()
             $this->ModelBuku->simpanKategori($data); redirect('buku/kategori');
         }
     }
-public function hapusKategori()
+    public function hapusKategori()
     {
         $where = ['id' => $this->uri->segment(3)];
         $this->ModelBuku->hapusKategori($where); redirect('buku/kategori');
     }
 
-public function ubahKategori()
+    public function ubahKategori()
     {
         $data['judul'] = 'Ubah Data Kategori';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
